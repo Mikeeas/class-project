@@ -39,12 +39,4 @@ public class UserController {
         return "signup";
     }
 
-    @RequestMapping(value="signup", method = RequestMethod.POST)
-    public String processsignup(@Valid @ModelAttribute UserDao newUser, Model model, Errors errors){
-        if (errors.hasErrors()){
-            model.addAttribute("title", "Create A New Account");
-        }
-        userDao.save(newUse);
-        return "index";
-    }
 }

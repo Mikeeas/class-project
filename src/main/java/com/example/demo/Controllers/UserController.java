@@ -44,7 +44,7 @@ public class UserController {
         if (errors.hasErrors()){
             model.addAttribute("title", "Create A New Account");
         }
-        userDao.save(newUser);
+        userDao.save(newUse);
         return "index";
     }
 }

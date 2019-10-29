@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <title th:text="${title}"></title>
+    <h1 th:text="${title}"></h1>
+    <nav th:fragment="navigation">
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+    </nav>
+</head>
+
+<body>
+<p>Here at Inven we are committed to helping you take business to the
+    next level. With the ability for any business owner to keep track of supplies, transactions
+    or any other inventory needs, we have you covered. Create a free account today and get started!
+</p>
+
+</body>
+</html>

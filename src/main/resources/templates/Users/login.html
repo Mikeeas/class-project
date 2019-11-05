@@ -5,14 +5,12 @@
 </head>
 
 <body>
-<form>
+<form method="post" th:object="${user}">
     <label for="username">Username</label>
-    <input id="username" value=""/>
+    <input th:field="*{user.username}" value=""/>
     <label for="password">Password</label>
-    <input id="password" type="password" value="">
-    <label for="confirm">Confirm Password</label>
-    <input id="confirm" value=""/>
-    <input type="submit" value="Sign up">
+    <input th:field="*{user.password}" type="password" value="">
+    <input type="submit" value="Login">
 </form>
 </body>
 </html>

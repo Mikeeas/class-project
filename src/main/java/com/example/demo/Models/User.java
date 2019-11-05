@@ -1,6 +1,6 @@
 package com.example.demo.Models;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +26,10 @@ public class User {
 
 
 
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
 
     public User(){}
 

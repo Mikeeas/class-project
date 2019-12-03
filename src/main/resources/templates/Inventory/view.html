@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <h1 th:text="${title}"></h1>
+    <a href="/edit">Edit Items</a>
+    <a href="/">Home</a>
+    <a href="/create">Add New</a>
+</head>
+
+<body>
+<div th:if="${Inventory} and ${Inventory.size()}">
+    <h3 th:text="${Inventory.size() + 'Result(s)'}"></h3>
+</div>
+
+<div th:each="item : ${inventory}">
+    <table>
+        <tr>
+        <th>Name</th>
+        <td th:text="${item.Name}"></td>
+        </tr>
+
+        <tr>
+            <th>Description</th>
+            <td th:text="${item.Description}"></td>
+        </tr>
+
+        <tr>
+            <th>Quantity</th>
+            <td th:text="${item.Quantity}"></td>
+        </tr>
+        <br/>
+    </table>
+
+</div>
+</body>
+</html>

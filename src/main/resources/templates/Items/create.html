@@ -2,10 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <h1 th:text="${title}"></h1>
-    <a href="/display">View</a>
+    <a href="/view">View</a>
+    <a href="">Home</a>
 </head>
 
 <body>
+<br>
+<br>
 <form method="post" th:object="${item}">
     <label th:for="name">Name</label>
     <input th:field="*{name}"/>

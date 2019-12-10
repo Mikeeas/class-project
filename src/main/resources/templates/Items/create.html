@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <h1 th:text="${title}"></h1>
-    <a href="/view">View</a>
-    <a href="">Home</a>
-</head>
+<head th:replace="fragments :: head"></head>
 
-<body>
-<br>
-<br>
+<body class="container">
+<h1 class="badge badge-primary text-wrap" style="width: 10rem; " th:text="${title}">INVEN</h1>
+<h1 class="p-3 mb-2 bg-success text-white" th:text="${titlee}"></h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<br/>
+<br/>
 <form method="post" th:object="${item}">
-    <label th:for="name">Name</label>
-    <input th:field="*{name}"/>
-    <label th:for="description">Description</label>
-    <input th:field="*{description}" type="text"/>
-    <label th:for="quantity">Quantity</label>
-    <input th:field="*{quantity}" type="number"/>
+    <div class="form-group">
+        <label th:for="name">Name:</label>
+        <input class="form-control" th:field="*{name}"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label th:for="description">Description:</label>
+        <input class="form-control" th:field="*{description}" type="text"/>
+    </div>
+        <br/>
+    <div class="form-group">
+    <label th:for="quantity">Quantity:   </label>
+    <input class="form-control" th:field="*{quantity}" type="number"/>
+    </div>
     <input type="submit" value="Add Product">
 </form>
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+<h1 class="badge badge-primary text-wrap" style="width: 10rem; " th:text="${title}">INVEN</h1>
+<h1 class="p-3 mb-2 bg-success text-white" th:text="${titlee}"></h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<br/>
+<br/>
+
+</body>
+<div class="form-group" th:each="item : ${inventory}">
+    <form method="post" >
+     <div>
+        <label th:for="name">Name:</label>
+        <input type="text" class="form-control" th:value="*{item.Name}" name="name"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label th:for="description">Description:</label>
+        <input class="form-control" th:value="*{item.Description}" type="text" name="description"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label th:for="quantity">Quantity:</label>
+        <input class="form-control" th:value="*{item.Quantity}" type="number" name="quantity"/>
+    </div>
+    <input type="submit" name="ItemId" th:value="*{item.ItemId}" class="btn btn-primary"/>
+
+</form>
+</div>
+</html>
+

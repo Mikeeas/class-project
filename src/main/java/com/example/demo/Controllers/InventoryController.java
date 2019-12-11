@@ -48,10 +48,13 @@ public class InventoryController {
 
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String handleEdit(Item item, Model model){
+    public String handleEdit(Item item, @RequestParam(value="ItemId") int itemId, Model model){
 
-
-        itemDao.save(item);
+        Item thing = itemDao.findById(itemId).get();
+        thing.setQuantity(item.getQuantity());
+        thing.setName(item.getName());
+        thing.setQuantity(item.getQuantity());
+        itemDao.save(thing);
 
         return "redirect:/view";
 

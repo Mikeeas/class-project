@@ -27,7 +27,8 @@
         <label th:for="quantity">Quantity:</label>
         <input class="form-control" th:value="*{item.Quantity}" type="number" name="quantity"/>
     </div>
-    <input type="submit" name="ItemId" th:value="*{item.ItemId}" class="btn btn-primary"/>
+        <input type="hidden" name="ItemId" th:value="*{item.ItemId}" id="ItemId"/>
+    <input type="submit" class="btn btn-primary" />
 
 </form>
 </div>
